@@ -39,15 +39,4 @@ jobs:
 
       # 6️⃣ Upload test report as artifact
       - name: Upload Test Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: cucumber-test-report
-          path: build/reports/tests/test
-
-      # 7️⃣ Deploy test report to GitHub Pages
-      - name: Deploy Test Report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v5
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/reports/tests/test
-          publish_branch: gh-pages
+        uses: actions/upload

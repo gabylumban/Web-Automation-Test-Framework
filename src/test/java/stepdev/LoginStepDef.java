@@ -7,8 +7,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginStepDef {
 
@@ -17,8 +18,13 @@ public class LoginStepDef {
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");          // agar browser tidak tampil
+        options.addArguments("--disable-gpu");       // rekomendasi untuk Windows
+        options.addArguments("--window-size=1920,1080"); // ukuran layar virtual
+
+        driver = new ChromeDriver(options);
+        // driver.manage().window().maximize();  // tidak perlu karena sudah diatur window-size
     }
 
     @Given("user is on login page")
@@ -48,8 +54,7 @@ public class LoginStepDef {
 
     @Then("user able to see error message {string}")
     public void userAbleToSeeErrorMessage(String message) {
-        String errorText =
-                driver.findElement(By.cssSelector("[data-test='error']")).getText();
+        String errorText = driver.findElement(By.cssSelector("[data-test='error']")).getText();
         assertTrue(errorText.contains(message));
     }
 

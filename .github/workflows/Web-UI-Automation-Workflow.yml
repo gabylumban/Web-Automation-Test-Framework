@@ -1,4 +1,4 @@
-name: Web Automation Workflow
+name: Web Automation
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
   automation:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: read  # cukup untuk checkout repo
 
     steps:
       # Checkout repo
@@ -29,14 +29,10 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v2.1.0
 
-      # Setup Gradlew
+      # Setup gradlew
       - name: Setup gradlew
         run: chmod +x gradlew
 
-      # Execute Gradle command for running cucumber tests
-      - name: Execute Test
-        run: ./gradlew test
-
-      # Generate and submit dependency graph
-      - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582
+      # Run Gradle tests
+      - name: Run Cucumber Tests
+        run: ./gradlew test --info

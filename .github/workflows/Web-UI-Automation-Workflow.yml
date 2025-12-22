@@ -1,4 +1,4 @@
-name: Web Automation 
+name: Web Automation
 
 on:
   push:
@@ -11,43 +11,33 @@ jobs:
   automation:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # perlu write agar bisa deploy ke GitHub Pages
+      contents: write   # wajib agar bisa push ke gh-pages
 
     steps:
-      # Checkout repo
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Set up JDK 17
+      # 2️⃣ Set up JDK 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # Setup Chrome
+      # 3️⃣ Setup Chrome
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v2.1.0
 
-      # Set gradlew executable
+      # 4️⃣ Set gradlew executable
       - name: Setup gradlew
         run: chmod +x gradlew
 
-      #  Run Cucumber tests (headless)
+      # 5️⃣ Run Cucumber tests (headless)
       - name: Run Cucumber Tests
         run: ./gradlew test --info
 
-      #  Upload test report as artifact (opsional)
+      # 6️⃣ Upload test report as artifact
       - name: Upload Test Report Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: cucumber-test-report
-          path: build/reports/tests/test
-
-      #  Deploy report ke GitHub Pages
-      - name: Deploy Test Report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/reports/tests/test
-          publish_branch: gh-pages

@@ -31,11 +31,11 @@ jobs:
 
       # 4️⃣ Set gradlew executable
       - name: Setup gradlew
-        run: chmod +x gradlew
+        run: chmod +x Web-test/gradlew
 
       # 5️⃣ Run Cucumber tests (headless)
       - name: Run Cucumber Tests
-        run: ./gradlew test --info
+        run: ./Web-test/gradlew test --info
 
       # 6️⃣ Upload test report as artifact
       - name: Upload Test Report Artifact

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - UserApiTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>UserApiTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/tests.html">tests</a> &gt; UserApiTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">2.463s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getUserById_invalidId()</td>
+<td class="success">1.259s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getUsers_boundaryPageZero()</td>
+<td class="success">0.306s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getUsers_invalidPage()</td>
+<td class="success">0.243s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getUsers_validPage()</td>
+<td class="success">0.655s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">HTTP/1.1 404 Not Found
+Date: Tue, 23 Dec 2025 10:11:22 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+Etag: W/&quot;2-vyGp6PvFo4RvsFtPoIWeCReyIC8&quot;
+Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+Ratelimit-Limit: 20
+Ratelimit-Policy: 20;w=60
+Ratelimit-Remaining: 19
+Ratelimit-Reset: 60
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=69cNQPItC5rQX%2BvT0AUtzuDwi91mvrGkJkWgUuNfA14%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1766484682&quot;}],&quot;max_age&quot;:3600}
+Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=69cNQPItC5rQX%2BvT0AUtzuDwi91mvrGkJkWgUuNfA14%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1766484682&quot;
+Server: cloudflare
+Vary: Origin, accept-encoding
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Powered-By: ReqRes.in - Deploy backends in 30 seconds
+X-Reqres-Docs: https://reqres.in
+X-Reqres-Message: This API is powered by ReqRes. Deploy your own backend in 30 seconds!
+X-Reqres-Templates: https://app.reqres.in/templates
+X-Reqres-Upgrade: https://app.reqres.in/upgrade
+X-Request-Id: 188889f8-08ca-071f-832b-0539e0d6dd87
+X-Xss-Protection: 1; mode=block
+Cache-Control: max-age=14400
+cf-cache-status: MISS
+Content-Encoding: gzip
+CF-RAY: 9b271310c89d1ff8-IAD
+
+{
+    
+}
+HTTP/1.1 200 OK
+Date: Tue, 23 Dec 2025 10:11:22 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+etag: W/&quot;600-DSziLS3KlRfI5T2Av9pzclJLaQk&quot;
+Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+Ratelimit-Limit: 20
+Ratelimit-Policy: 20;w=60
+Ratelimit-Remaining: 19
+Ratelimit-Reset: 60
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=FOfHKSBc0xy7S2G%2F%2FKQ7H4KWZQhld7Wvt9tGOJAq%2BAk%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1766466470&quot;}],&quot;max_age&quot;:3600}
+Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=FOfHKSBc0xy7S2G%2F%2FKQ7H4KWZQhld7Wvt9tGOJAq%2BAk%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1766466470&quot;
+Server: cloudflare
+Vary: Origin, accept-encoding
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Powered-By: ReqRes.in - Deploy backends in 30 seconds
+X-Reqres-Docs: https://reqres.in
+X-Reqres-Message: This API is powered by ReqRes. Deploy your own backend in 30 seconds!
+X-Reqres-Templates: https://app.reqres.in/templates
+X-Reqres-Upgrade: https://app.reqres.in/upgrade
+X-Request-Id: 00071491-97a1-77a2-aa56-914b37b08588
+X-Xss-Protection: 1; mode=block
+Cache-Control: max-age=14400
+cf-cache-status: REVALIDATED
+Content-Encoding: gzip
+CF-RAY: 9b271313394d5bff-IAD
+
+{
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 6,
+    &quot;total&quot;: 12,
+    &quot;total_pages&quot;: 2,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;email&quot;: &quot;george.bluth@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;George&quot;,
+            &quot;last_name&quot;: &quot;Bluth&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/1-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;email&quot;: &quot;janet.weaver@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Janet&quot;,
+            &quot;last_name&quot;: &quot;Weaver&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/2-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;email&quot;: &quot;emma.wong@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Emma&quot;,
+            &quot;last_name&quot;: &quot;Wong&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/3-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Eve&quot;,
+            &quot;last_name&quot;: &quot;Holt&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/4-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;email&quot;: &quot;charles.morris@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Charles&quot;,
+            &quot;last_name&quot;: &quot;Morris&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/5-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;email&quot;: &quot;tracey.ramos@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Tracey&quot;,
+            &quot;last_name&quot;: &quot;Ramos&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/6-image.jpg&quot;
+        }
+    ],
+    &quot;support&quot;: {
+        &quot;url&quot;: &quot;https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral&quot;,
+        &quot;text&quot;: &quot;Tired of writing endless social media content? Let Content Caddy generate it for you.&quot;
+    },
+    &quot;_meta&quot;: {
+        &quot;powered_by&quot;: &quot;&#x1f680; ReqRes - Deploy backends in 30 seconds&quot;,
+        &quot;upgrade_url&quot;: &quot;https://app.reqres.in/upgrade&quot;,
+        &quot;docs_url&quot;: &quot;https://reqres.in&quot;,
+        &quot;template_gallery&quot;: &quot;https://app.reqres.in/templates&quot;,
+        &quot;message&quot;: &quot;This API is powered by ReqRes. Deploy your own backend in 30 seconds!&quot;,
+        &quot;features&quot;: [
+            &quot;30 Second Backend Templates&quot;,
+            &quot;Custom API Endpoints&quot;,
+            &quot;Data Persistence&quot;,
+            &quot;Real-time Analytics&quot;
+        ],
+        &quot;upgrade_cta&quot;: &quot;Upgrade to Pro for unlimited requests, custom endpoints, and data persistence&quot;
+    }
+}
+HTTP/1.1 200 OK
+Date: Tue, 23 Dec 2025 10:11:23 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+Etag: W/&quot;600-DSziLS3KlRfI5T2Av9pzclJLaQk&quot;
+Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+Ratelimit-Limit: 20
+Ratelimit-Policy: 20;w=60
+Ratelimit-Remaining: 19
+Ratelimit-Reset: 60
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=AV4DRJLjntbB51mIGR692k%2Fr0zjKNKIZ3WuP1XtXGJs%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1766484683&quot;}],&quot;max_age&quot;:3600}
+Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=AV4DRJLjntbB51mIGR692k%2Fr0zjKNKIZ3WuP1XtXGJs%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1766484683&quot;
+Server: cloudflare
+Vary: Origin, accept-encoding
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Powered-By: ReqRes.in - Deploy backends in 30 seconds
+X-Reqres-Docs: https://reqres.in
+X-Reqres-Message: This API is powered by ReqRes. Deploy your own backend in 30 seconds!
+X-Reqres-Templates: https://app.reqres.in/templates
+X-Reqres-Upgrade: https://app.reqres.in/upgrade
+X-Request-Id: 2000ac5f-4c52-e17c-4473-e8b6d68ecbaf
+X-Xss-Protection: 1; mode=block
+Cache-Control: max-age=14400
+cf-cache-status: MISS
+Content-Encoding: gzip
+CF-RAY: 9b2713176cb1d68b-IAD
+
+{
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 6,
+    &quot;total&quot;: 12,
+    &quot;total_pages&quot;: 2,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;email&quot;: &quot;george.bluth@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;George&quot;,
+            &quot;last_name&quot;: &quot;Bluth&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/1-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;email&quot;: &quot;janet.weaver@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Janet&quot;,
+            &quot;last_name&quot;: &quot;Weaver&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/2-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;email&quot;: &quot;emma.wong@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Emma&quot;,
+            &quot;last_name&quot;: &quot;Wong&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/3-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Eve&quot;,
+            &quot;last_name&quot;: &quot;Holt&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/4-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;email&quot;: &quot;charles.morris@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Charles&quot;,
+            &quot;last_name&quot;: &quot;Morris&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/5-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;email&quot;: &quot;tracey.ramos@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Tracey&quot;,
+            &quot;last_name&quot;: &quot;Ramos&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/6-image.jpg&quot;
+        }
+    ],
+    &quot;support&quot;: {
+        &quot;url&quot;: &quot;https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral&quot;,
+        &quot;text&quot;: &quot;Tired of writing endless social media content? Let Content Caddy generate it for you.&quot;
+    },
+    &quot;_meta&quot;: {
+        &quot;powered_by&quot;: &quot;&#x1f680; ReqRes - Deploy backends in 30 seconds&quot;,
+        &quot;upgrade_url&quot;: &quot;https://app.reqres.in/upgrade&quot;,
+        &quot;docs_url&quot;: &quot;https://reqres.in&quot;,
+        &quot;template_gallery&quot;: &quot;https://app.reqres.in/templates&quot;,
+        &quot;message&quot;: &quot;This API is powered by ReqRes. Deploy your own backend in 30 seconds!&quot;,
+        &quot;features&quot;: [
+            &quot;30 Second Backend Templates&quot;,
+            &quot;Custom API Endpoints&quot;,
+            &quot;Data Persistence&quot;,
+            &quot;Real-time Analytics&quot;
+        ],
+        &quot;upgrade_cta&quot;: &quot;Upgrade to Pro for unlimited requests, custom endpoints, and data persistence&quot;
+    }
+}
+HTTP/1.1 200 OK
+Date: Tue, 23 Dec 2025 10:11:23 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization, x-api-key
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+Access-Control-Allow-Origin: http://localhost:5173
+Etag: W/&quot;601-buN4UPu2L7o3TQ9zmLexEpWGDPE&quot;
+Nel: {&quot;report_to&quot;:&quot;heroku-nel&quot;,&quot;response_headers&quot;:[&quot;Via&quot;],&quot;max_age&quot;:3600,&quot;success_fraction&quot;:0.01,&quot;failure_fraction&quot;:0.1}
+Ratelimit-Limit: 20
+Ratelimit-Policy: 20;w=60
+Ratelimit-Remaining: 19
+Ratelimit-Reset: 60
+Referrer-Policy: strict-origin-when-cross-origin
+Report-To: {&quot;group&quot;:&quot;heroku-nel&quot;,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://nel.heroku.com/reports?s=AV4DRJLjntbB51mIGR692k%2Fr0zjKNKIZ3WuP1XtXGJs%3D\u0026sid=c4c9725f-1ab0-44d8-820f-430df2718e11\u0026ts=1766484683&quot;}],&quot;max_age&quot;:3600}
+Reporting-Endpoints: heroku-nel=&quot;https://nel.heroku.com/reports?s=AV4DRJLjntbB51mIGR692k%2Fr0zjKNKIZ3WuP1XtXGJs%3D&amp;sid=c4c9725f-1ab0-44d8-820f-430df2718e11&amp;ts=1766484683&quot;
+Server: cloudflare
+Vary: Origin, accept-encoding
+Via: 1.1 heroku-router
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+X-Powered-By: ReqRes.in - Deploy backends in 30 seconds
+X-Reqres-Docs: https://reqres.in
+X-Reqres-Message: This API is powered by ReqRes. Deploy your own backend in 30 seconds!
+X-Reqres-Templates: https://app.reqres.in/templates
+X-Reqres-Upgrade: https://app.reqres.in/upgrade
+X-Request-Id: 71c68d29-03ed-e1d5-c45a-319ae6f41b36
+X-Xss-Protection: 1; mode=block
+Cache-Control: max-age=14400
+cf-cache-status: MISS
+Content-Encoding: gzip
+CF-RAY: 9b2713192dee084e-IAD
+
+{
+    &quot;page&quot;: -1,
+    &quot;per_page&quot;: 6,
+    &quot;total&quot;: 12,
+    &quot;total_pages&quot;: 2,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;email&quot;: &quot;george.bluth@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;George&quot;,
+            &quot;last_name&quot;: &quot;Bluth&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/1-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;email&quot;: &quot;janet.weaver@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Janet&quot;,
+            &quot;last_name&quot;: &quot;Weaver&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/2-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;email&quot;: &quot;emma.wong@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Emma&quot;,
+            &quot;last_name&quot;: &quot;Wong&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/3-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;email&quot;: &quot;eve.holt@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Eve&quot;,
+            &quot;last_name&quot;: &quot;Holt&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/4-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;email&quot;: &quot;charles.morris@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Charles&quot;,
+            &quot;last_name&quot;: &quot;Morris&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/5-image.jpg&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;email&quot;: &quot;tracey.ramos@reqres.in&quot;,
+            &quot;first_name&quot;: &quot;Tracey&quot;,
+            &quot;last_name&quot;: &quot;Ramos&quot;,
+            &quot;avatar&quot;: &quot;https://reqres.in/img/faces/6-image.jpg&quot;
+        }
+    ],
+    &quot;support&quot;: {
+        &quot;url&quot;: &quot;https://contentcaddy.io?utm_source=reqres&amp;utm_medium=json&amp;utm_campaign=referral&quot;,
+        &quot;text&quot;: &quot;Tired of writing endless social media content? Let Content Caddy generate it for you.&quot;
+    },
+    &quot;_meta&quot;: {
+        &quot;powered_by&quot;: &quot;&#x1f680; ReqRes - Deploy backends in 30 seconds&quot;,
+        &quot;upgrade_url&quot;: &quot;https://app.reqres.in/upgrade&quot;,
+        &quot;docs_url&quot;: &quot;https://reqres.in&quot;,
+        &quot;template_gallery&quot;: &quot;https://app.reqres.in/templates&quot;,
+        &quot;message&quot;: &quot;This API is powered by ReqRes. Deploy your own backend in 30 seconds!&quot;,
+        &quot;features&quot;: [
+            &quot;30 Second Backend Templates&quot;,
+            &quot;Custom API Endpoints&quot;,
+            &quot;Data Persistence&quot;,
+            &quot;Real-time Analytics&quot;
+        ],
+        &quot;upgrade_cta&quot;: &quot;Upgrade to Pro for unlimited requests, custom endpoints, and data persistence&quot;
+    }
+}
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.0</a> at Dec 23, 2025, 10:11:23 AM</p>
+</div>
+</div>
+</body>
+</html>

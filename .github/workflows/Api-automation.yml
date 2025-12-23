@@ -1,17 +1,13 @@
 name: Otomasi API Automation
 
-# Trigger workflow saat push atau pull request ke branch master
 on:
   push:
     branches:
-      - master
+      - master   # branch default repo kamu
   pull_request:
-    branches:
-      - master
 
 jobs:
   api-tests:
-    name: Run API Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Java 17
+      # 2️⃣ Setup Java
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -43,15 +39,25 @@ jobs:
           path: ./OtomasiAPI/build/reports/tests/test
 
   deploy-pages:
-    name: Deploy Test Report to GitHub Pages
     needs: api-tests
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'  # hanya deploy dari master branch
+    if: github.ref == 'refs/heads/master'  # deploy hanya dari master
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 1️⃣ Buat branch gh-pages jika belum ada
+      - name: Create gh-pages branch if not exists
+        run: |
+          git fetch origin
+          if ! git rev-parse --verify origin/gh-pages; then
+            git checkout --orphan gh-pages
+            git commit --allow-empty -m "Initialize gh-pages branch"
+            git push origin gh-pages
+          fi
+
+      # 2️⃣ Deploy Test Report ke GitHub Pages
       - name: Deploy Test Report
         uses: peaceiris/actions-gh-pages@v4
         with:

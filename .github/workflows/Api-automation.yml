@@ -3,7 +3,7 @@ name: Otomasi API Automation
 on:
   push:
     branches:
-      - master   # branch default
+      - master
   pull_request:
 
 jobs:
@@ -41,7 +41,7 @@ jobs:
   deploy-pages:
     needs: api-tests
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'  # hanya deploy dari master
+    if: github.ref == 'refs/heads/master'
 
     steps:
       - name: Checkout repository
@@ -50,6 +50,7 @@ jobs:
       - name: Deploy Test Report to GitHub Pages
         run: |
           REPORT_DIR=OtomasiAPI/build/reports/tests/test
+          DEPLOY_DIR=temp-gh-pages
 
           # Cek dulu apakah report ada
           if [ ! -d "$REPORT_DIR" ]; then
@@ -57,10 +58,17 @@ jobs:
             exit 0
           fi
 
-          # Buat temporary folder untuk gh-pages
-          mkdir -p temp-gh-pages
-          cp -r $REPORT_DIR/* temp-gh-pages/
-          cd temp-gh-pages
+          # Salin report ke folder deploy
+          rm -rf $DEPLOY_DIR
+          mkdir -p $DEPLOY_DIR
+          cp -r $REPORT_DIR/* $DEPLOY_DIR/
+          
+          # Tambahkan index.html default jika tidak ada
+          if [ ! -f "$DEPLOY_DIR/index.html" ]; then
+            echo "<html><body><h1>API Test Report</h1></body></html>" > $DEPLOY_DIR/index.html
+          fi
+
+          cd $DEPLOY_DIR
 
           # Inisialisasi git
           git init
@@ -72,10 +80,12 @@ jobs:
 
           git add .
 
-          # Hanya commit jika ada perubahan
+          # Commit dan push hanya jika ada perubahan
           if git diff-index --quiet HEAD; then
             echo "No changes to commit. Skipping push."
           else
             git commit -m "Deploy API test report: $(date +'%Y-%m-%d %H:%M:%S')"
             git push origin gh-pages --force
           fi
+
+          echo "✅ API Test Report deployed: https://$GITHUB_REPOSITORY_OWNER.github.io/${GITHUB_REPOSITORY##*/}/"

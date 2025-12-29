@@ -1,14 +1,15 @@
 package requests;
 
 import io.restassured.response.Response;
+import config.BaseTest;
 
-import static io.restassured.RestAssured.given;
+public class UserRequest extends BaseTest {
 
-public class UserRequest {
+    public Response getUser(int id) {
+        return sendGet("/users/" + id);
+    }
 
-    public Response getUser() {
-        return given()
-                .when()
-                .get("/users/1");
+    public Response getUsersByPage(int page) {
+        return sendGet("/users?page=" + page);
     }
 }

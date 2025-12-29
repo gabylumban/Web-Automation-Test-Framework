@@ -45,3 +45,4 @@ public class UserApiTest extends BaseTest {
                 .body("page", equalTo(1));
     }
 }
+

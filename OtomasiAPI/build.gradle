@@ -10,20 +10,26 @@ repositories {
 }
 
 dependencies {
-    // ===== Cucumber =====
+    // Cucumber
     testImplementation 'io.cucumber:cucumber-java:7.16.1'
     testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.16.1'
 
-    // ===== JUnit 5 =====
+    // JUnit 5
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
 
-    // ===== RestAssured =====
+    // RestAssured
     testImplementation 'io.rest-assured:rest-assured:5.4.0'
     implementation 'org.json:json:20250517'
+
+    // Optional: Cucumber HTML Reporting
+    testImplementation 'net.masterthought:cucumber-reporting:7.1.0'
 }
 
 test {
     useJUnitPlatform()
+    reports {
+        junitXml.required = true
+        html.required = true
+    }
 }

@@ -1,4 +1,4 @@
-name: Reqres User API Automation
+name: API Automation
 
 on:
   push:

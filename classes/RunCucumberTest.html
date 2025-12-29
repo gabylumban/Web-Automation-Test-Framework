@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">11.590s</div>
+<div class="counter">26.547s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,13 +81,13 @@
 </tr>
 </thead>
 <tr>
-<td class="success">Login using invalid email  and password</td>
-<td class="success">0.931s</td>
+<td class="success">Login with invalid user</td>
+<td class="success">1.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">Login using valid email  and password</td>
-<td class="success">10.659s</td>
+<td class="success">Login with valid user</td>
+<td class="success">25.545s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -96,19 +96,19 @@
 <h2>Standard output</h2>
 <span class="code">
 <pre id="class-stdout">
-Scenario: Login using valid email  and password ?[90m# features/Login.feature:3?[0m
-  ?[32mGiven ?[0m?[32muser is on login page?[0m                   ?[90m# stepdev.LoginStepDef.userIsOnLoginPage()?[0m
-  ?[32mAnd ?[0m?[32muser input username with ?[0m?[32m?[1m&quot;standard_user&quot;?[0m  ?[90m# stepdev.LoginStepDef.userInputUsernameWith(java.lang.String)?[0m
-  ?[32mAnd ?[0m?[32muser input password with ?[0m?[32m?[1m&quot;secret_sauce&quot;?[0m   ?[90m# stepdev.LoginStepDef.userInputPasswordWith(java.lang.String)?[0m
-  ?[32mWhen ?[0m?[32muser click login button?[0m                  ?[90m# stepdev.LoginStepDef.userClickLoginButton()?[0m
-  ?[32mThen ?[0m?[32muser is on homepage?[0m                      ?[90m# stepdev.LoginStepDef.userIsOnHomepage()?[0m
+Scenario: Login with valid user                ?[90m# features/Login.feature:3?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                  ?[90m# stepdev.LoginStepDef.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input username with ?[0m?[32m?[1m&quot;standard_user&quot;?[0m ?[90m# stepdev.LoginStepDef.userInputUsernameWith(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password with ?[0m?[32m?[1m&quot;secret_sauce&quot;?[0m  ?[90m# stepdev.LoginStepDef.userInputPasswordWith(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click login button?[0m                 ?[90m# stepdev.LoginStepDef.userClickLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser is on homepage?[0m                     ?[90m# stepdev.LoginStepDef.userIsOnHomepage()?[0m
 
-Scenario: Login using invalid email  and password                                                                 ?[90m# features/Login.feature:10?[0m
-  ?[32mGiven ?[0m?[32muser is on login page?[0m                                                                                     ?[90m# stepdev.LoginStepDef.userIsOnLoginPage()?[0m
-  ?[32mAnd ?[0m?[32muser input username with ?[0m?[32m?[1m&quot;standard_user&quot;?[0m                                                                    ?[90m# stepdev.LoginStepDef.userInputUsernameWith(java.lang.String)?[0m
-  ?[32mAnd ?[0m?[32muser input password with ?[0m?[32m?[1m&quot;invalid&quot;?[0m                                                                          ?[90m# stepdev.LoginStepDef.userInputPasswordWith(java.lang.String)?[0m
-  ?[32mWhen ?[0m?[32muser click login button?[0m                                                                                    ?[90m# stepdev.LoginStepDef.userClickLoginButton()?[0m
-  ?[32mThen ?[0m?[32muser able to see error message ?[0m?[32m?[1m&quot;Epic sadface: Username and password do not match any user in this service&quot;?[0m ?[90m# stepdev.LoginStepDef.userAbleToSeeErrorMessage(java.lang.String)?[0m
+Scenario: Login with invalid user                ?[90m# features/Login.feature:10?[0m
+  ?[32mGiven ?[0m?[32muser is on login page?[0m                    ?[90m# stepdev.LoginStepDef.userIsOnLoginPage()?[0m
+  ?[32mAnd ?[0m?[32muser input username with ?[0m?[32m?[1m&quot;locked_out_user&quot;?[0m ?[90m# stepdev.LoginStepDef.userInputUsernameWith(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32muser input password with ?[0m?[32m?[1m&quot;secret_sauce&quot;?[0m    ?[90m# stepdev.LoginStepDef.userInputPasswordWith(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32muser click login button?[0m                   ?[90m# stepdev.LoginStepDef.userClickLoginButton()?[0m
+  ?[32mThen ?[0m?[32muser able to see error message ?[0m?[32m?[1m&quot;Sorry&quot;?[0m    ?[90m# stepdev.LoginStepDef.userAbleToSeeErrorMessage(java.lang.String)?[0m
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
 </span>
@@ -119,13 +119,13 @@ Scenario: Login using invalid email  and password                               
 <pre id="class-stderr">SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-Dec 29, 2025 8:53:50 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 29, 2025 8:54:50 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 143
-Dec 29, 2025 8:53:50 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Dec 29, 2025 8:54:50 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 143.0.7499.109. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-Dec 29, 2025 8:53:52 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Dec 29, 2025 8:54:54 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 143
-Dec 29, 2025 8:53:52 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Dec 29, 2025 8:54:54 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 143.0.7499.109. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 </pre>
 <button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stderr">Copy</button>
@@ -139,7 +139,7 @@ WARNING: Unable to find version of CDP to use for 143.0.7499.109. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.2.0</a> at Dec 29, 2025, 8:53:53 AM</p>
+<a href="https://www.gradle.org">Gradle 9.2.0</a> at Dec 29, 2025, 8:54:55 AM</p>
 </div>
 </div>
 </body>

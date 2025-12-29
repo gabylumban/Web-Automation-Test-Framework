@@ -27,32 +27,32 @@ jobs:
 
       # 3. Set executable gradlew
       - name: Setup gradlew
-        working-directory: ./API-test
+        working-directory: ./OtomasiAPI
         run: chmod +x gradlew
 
       # 4. Run Cucumber Tests
       - name: Run API Cucumber Tests
-        working-directory: ./API-test
+        working-directory: ./OtomasiAPI
         run: ./gradlew clean test cucumber
 
       # 5. Prepare HTML report
       - name: Prepare Cucumber Report
         run: |
-          cp API-test/build/cucumber-report/cucumber.html API-test/build/cucumber-report/index.html
+          cp OtomasiAPI/build/cucumber-report/cucumber.html OtomasiAPI/build/cucumber-report/index.html
 
       # 6. Upload report artifact
       - name: Upload Cucumber Report Artifact
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-api-report
-          path: API-test/build/cucumber-report
+          path: OtomasiAPI/build/cucumber-report
 
       # 7. Deploy report to GitHub Pages
       - name: Deploy Cucumber Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./API-test/build/cucumber-report
+          publish_dir: ./OtomasiAPI/build/cucumber-report
           publish_branch: gh-pages
 
       # 8. Add report link to workflow summary
@@ -61,4 +61,4 @@ jobs:
           echo "### 🥒 Reqres User API Test Result" >> $GITHUB_STEP_SUMMARY
           echo "- Environment: GitHub Actions" >> $GITHUB_STEP_SUMMARY
           echo "- Report Type: Cucumber HTML Report" >> $GITHUB_STEP_SUMMARY
-          echo "- Report URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> $GITHUB_STEP_SUMMARY
+          echo "- Report URL: https://${{ github.r

@@ -1,10 +1,11 @@
-name: Otomasi API Automation
+name: API Automation Report
 
 on:
   push:
-    branches:
-      - master
+    branches: [ "master" ]
   pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
 
 jobs:
   api-tests:
@@ -27,10 +28,10 @@ jobs:
         working-directory: ./OtomasiAPI
         run: ./gradlew test --info
 
-      - name: Upload Test Report
+      - name: Upload Test Report Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: api-test-report
+          name: cucumber-api-test-report
           path: ./OtomasiAPI/build/reports/tests/test
 
   deploy-pages:
@@ -46,32 +47,12 @@ jobs:
         run: |
           REPORT_DIR=OtomasiAPI/build/reports/tests/test
           DEPLOY_DIR=temp-gh-pages
-
-          if [ ! -d "$REPORT_DIR" ]; then
-            echo "Report directory not found! Skipping deploy."
-            exit 0
-          fi
-
-          rm -rf $DEPLOY_DIR
           mkdir -p $DEPLOY_DIR
           cp -r $REPORT_DIR/* $DEPLOY_DIR/
-          
-          if [ ! -f "$DEPLOY_DIR/index.html" ]; then
-            echo "<html><body><h1>API Test Report</h1></body></html>" > $DEPLOY_DIR/index.html
-          fi
-
           cd $DEPLOY_DIR
           git init
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git fetch origin gh-pages || true
-          git checkout gh-pages || git checkout -b gh-pages
+          git checkout -b gh-pages || git checkout gh-pages
           git add .
-
-          if git diff-index --quiet HEAD; then
-            echo "No changes to commit. Skipping push."
-          else
-            git commit -m "Deploy API test report: $(date +'%Y-%m-%d %H:%M:%S')"
-            git push origin gh-pages --force
-          fi
-
-          echo "✅ API Test Report deployed: https://$GITHUB_REPOSITORY_OWNER.github.io/${GITHUB_REPOSITORY##*/}/"
+          git commit -m "Deploy API test report"
+          git push origin gh-pages --force

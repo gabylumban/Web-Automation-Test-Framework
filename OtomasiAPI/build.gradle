@@ -1,33 +1,13 @@
-plugins {
-    id 'java'
-    id 'io.qameta.allure' version '2.11.2'
-}
-
-group = 'org.example'
-version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    // ===== API =====
-    testImplementation 'io.rest-assured:rest-assured:5.4.0'
-    implementation 'org.json:json:20250517'
-
-    // ===== JUnit 5 =====
+    // Cucumber
+    testImplementation 'io.cucumber:cucumber-java:7.16.1'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.16.1'
+    
+    // JUnit 5
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.0'
-
-    // ===== Allure =====
-    testImplementation 'io.qameta.allure:allure-junit5:2.25.0'
-}
-
-test {
-    useJUnitPlatform()
-}
-
-allure {
-    version = '2.25.0'
+    
+    // Rest-Assured
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
 }

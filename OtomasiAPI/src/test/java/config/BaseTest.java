@@ -1,12 +1,17 @@
 package config;
 
 import io.restassured.RestAssured;
-import org.junit.Before;
+import io.restassured.response.Response;
 
 public class BaseTest {
+    protected Response response;
 
-    @Before
-    public void setup() {
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+    static {
+        RestAssured.baseURI = "https://reqres.in/api";
+    }
+
+    protected Response sendGet(String endpoint) {
+        response = RestAssured.get(endpoint);
+        return response;
     }
 }

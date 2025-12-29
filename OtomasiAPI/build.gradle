@@ -17,7 +17,7 @@ dependencies {
     // JUnit 4
     testImplementation 'junit:junit:4.13.2'
 
-    // RestAssured untuk API testing
+    // RestAssured
     testImplementation 'io.rest-assured:rest-assured:5.3.0'
 
     // JSON support
@@ -28,7 +28,6 @@ test {
     useJUnit()
 }
 
-// Task untuk run cucumber secara terpisah
 task cucumber(type: Test) {
     useJUnit()
     testClassesDirs = sourceSets.test.output.classesDirs

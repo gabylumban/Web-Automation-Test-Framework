@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  api-test:
+  api-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,8 +21,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Make Gradlew executable
-        run: chmod +x ./Api-test/gradlew
+      - name: Setup Gradle Wrapper
+        working-directory: ./Api-test
+        run: chmod +x gradlew
+
+      - name: Use Gradle 8.3
+        run: ./Api-test/gradlew wrapper --gradle-version 8.3
 
       - name: Run API Tests
         working-directory: ./Api-test
@@ -32,8 +36,6 @@ jobs:
         working-directory: ./Api-test
         run: ./gradlew allureReport
 
-      - name: Upload Allure Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: Api-test/build/reports/allure-report
+      - name: Serve Allure Report (Optional)
+        working-directory: ./Api-test
+        run: ./gradlew allureServe

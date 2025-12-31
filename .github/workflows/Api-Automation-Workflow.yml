@@ -37,5 +37,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: ./build/reports/allure-report
+          path: ./build/allure-report   # <-- ubah path di sini
           if-no-files-found: warn

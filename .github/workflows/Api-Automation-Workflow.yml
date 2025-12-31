@@ -12,39 +12,30 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Api-test   # <-- Semua jalan di sini
+        working-directory: ./Api-test
 
     steps:
-      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Java
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # Make gradlew executable
-      - name: Setup Gradle Wrapper
+      - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      # Use Gradle 8.3 explicitly
-      - name: Use Gradle 8.3
-        run: ./gradlew wrapper --gradle-version 8.3 --distribution-type bin
-
-      # Run API tests
       - name: Run API tests
         run: ./gradlew clean test
 
-      # Generate Allure report
       - name: Generate Allure report
         run: ./gradlew allureReport
 
-      # Upload Allure report artifacts
       - name: Upload Allure Report Artifact
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: ./build/reports/allure-report
+          if-no-files-found: warn

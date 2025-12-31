@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Api-test
+        working-directory: ./Api-test  # semua run perintah dari folder Api-test
 
     steps:
       - name: Checkout repository
@@ -30,9 +30,13 @@ jobs:
       - name: Run API tests and generate Allure report
         run: ./gradlew clean test allureReport --no-daemon
 
+      - name: Debug Allure report files
+        run: |
+          echo "Listing Allure report files:"
+          ls -R build/reports/allure-report
+
       - name: Upload Allure Report Artifact
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: ./build/reports/allure-report/**
-          if-no-files-found: warn
+          path: ./Api-test/build/reports/allure-report  # path dari root repo

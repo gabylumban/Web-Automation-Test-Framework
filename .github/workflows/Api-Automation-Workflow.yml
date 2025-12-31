@@ -27,15 +27,12 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Run API tests
-        run: ./gradlew clean test
-
-      - name: Generate Allure report
-        run: ./gradlew allureReport
+      - name: Run API tests and generate Allure report
+        run: ./gradlew clean test allureReport --no-daemon
 
       - name: Upload Allure Report Artifact
         uses: actions/upload-artifact@v4
         with:
           name: allure-report
-          path: ./build/allure-report   # <-- ubah path di sini
+          path: ./build/reports/allure-report/**
           if-no-files-found: warn

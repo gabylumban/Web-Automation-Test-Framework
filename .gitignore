@@ -35,12 +35,15 @@ bin/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+ /dist/
+ /nbdist/
+ /.nb-gradle/
 
 ### VS Code ###
 .vscode/
 
 ### Mac OS ###
 .DS_Store
+
+# Allure results
+allure-results/

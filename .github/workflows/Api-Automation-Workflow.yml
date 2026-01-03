@@ -31,8 +31,9 @@ jobs:
         run: npm install -g allure-commandline --save-dev #install allure
 
       - name: Build with Gradle
-        run:  chmod +x ./gradlew #make gradlew executabl
-              ./gradlew build #Run the build task before test
+        run:
+            chmod +x ./gradlew #make gradlew executable
+            ./gradlew build #Run the build task before test
 
       - name: Run API tests
         run: ./gradlew clean test

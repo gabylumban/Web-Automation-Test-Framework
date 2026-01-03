@@ -49,4 +49,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
            personal_token : ${{ secrets.PERSONAL_TOKEN }}
-           publish_dir: build/reports/allure-report #html yang publish
+           publish_dir: build/reports/allure-report/allureReport  #html yang publish
